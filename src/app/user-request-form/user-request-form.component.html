@@ -1,0 +1,77 @@
+<div class="container p-3 mt-3 border col-sm-8  col-md-6" >
+
+    <a href="#" id="back-to-home">< Home</a> 
+    <br><br>
+
+    <h2>Become a member</h2>
+
+    <br>
+
+    <div *ngIf="error != ''"  class="alert alert-danger">{{error}}</div>
+
+    <form #userPost="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="first-name" >First name</label>
+          <input type="text" class="form-control ng-untouched ng-pristine ng-valid" id="first-name" name="first-name" [(ngModel)]="customer.firstName" 
+          #firstName="ngModel" placeholder="First name" required>
+
+          <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">First name is required</div>
+        </div>
+
+        <div class="form-group">
+            <label for="last-name">Last name</label>
+            <input type="text" class="form-control ng-untouched ng-pristine ng-valid" id="last-name" name="last-name" [(ngModel)]="customer.lastName" 
+            #lastName="ngModel" placeholder="Last name" required>   
+
+            <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">Last name is required</div>
+        </div>
+          
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control ng-untouched ng-pristine ng-valid" id="email" aria-describedby="emailHelp" name="email" [(ngModel)]="customer.email" 
+            #email="ngModel" placeholder="Enter email" required>
+          <div [hidden]="email.valid || email.pristine" class="alert alert-danger">Email is required</div>
+        </div>
+
+        <div class="form-group">
+            <label for="telephone">Telephone</label>
+            <input type="tel" class="form-control ng-untouched ng-pristine ng-valid" id="telephone" name="telephone" [(ngModel)]="customer.telephone" 
+            #telephone="ngModel" placeholder="Telephone" required>
+            <div [hidden]="telephone.valid || telephone.pristine" class="alert alert-danger">Telephone is required</div>
+        </div>
+
+        <div class="form-group">
+            <label for="date-of-birth">Date of Birth</label>
+            <input type="date" class="form-control ng-untouched ng-pristine ng-valid" id="date-of-birth" name="date-of-birth" [(ngModel)]="customer.dateOfBirth" 
+            #dob="ngModel" placeholder="date-of-birth" required>
+            <div [hidden]="dob.valid || dob.pristine" class="alert alert-danger">Date of Birth is required</div>
+        </div>
+
+        <div class=" form-group">
+            <label for="nic">NIC</label>
+            <input type="text" class="form-control ng-untouched ng-pristine ng-valid" id="nic" name="nic" [(ngModel)]="customer.nic" 
+            #nic="ngModel" placeholder="NIC" required>
+            <div [hidden]="nic.valid || nic.pristine" class="alert alert-danger">NIC is required</div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control ng-untouched ng-pristine ng-valid" id="password" name="password" [(ngModel)]="customer.password" 
+          #password="ngModel" placeholder="Password" required>
+          <div [hidden]="password.valid || password.pristine" class="alert alert-danger">Password is required</div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" class="form-control ng-untouched ng-pristine ng-valid" id="confirm-password" name="confirm-password" [(ngModel)]="confirmPwd"
+            #confirmPassword="ngModel" placeholder="Confirm Password" required>
+            <div [hidden]="confirmPassword.valid || confirmPassword.pristine" class="alert alert-danger">Confirm Password is required</div>
+          </div>
+
+        <button type="reset" class="btn btn-danger">Reset</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+</div>
+
+

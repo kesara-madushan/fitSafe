@@ -1,0 +1,27 @@
+
+
+
+h1{
+    font-size: 56px;
+}
+
+a {
+    color:rgb(2, 73, 155);
+    font-size: 28px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(35, 132, 211);
+}
+
+a:select
+
+#login{
+    margin: auto;
+    /* margin-top: 20%;  */
+}
+
+#letters{
+    margin-top: 10%; 
+}

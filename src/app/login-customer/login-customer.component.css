@@ -1,0 +1,9 @@
+#back-to-home {
+    color:rgb(2, 73, 155);
+    font-size: 28px;
+    text-decoration: none;
+}
+
+#back-to-home:hover {
+    color: rgb(35, 132, 211);
+}

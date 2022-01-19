@@ -1,0 +1,36 @@
+
+<div class="container p-3 mt-3">
+
+    <a routerLink="/home-admin" id="back-to-home">< Home</a> 
+    <br><br>
+
+    <h2>Manage Customer Requests</h2>
+    <br>
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Date of Birth</th>
+                <th>NIC</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customerRequests">
+                <td><span>{{customer.firstName}}</span></td>
+                <td><span>{{customer.lastName}}</span></td>
+                <td><span>{{customer.email}}</span></td>
+                <td><span>{{customer.telephone}}</span></td>
+                <td><span>{{customer.dateOfBirth}}</span></td>
+                <td><span>{{customer.nic}}</span></td>
+                <td>
+                    <button type="button" class="btn btn-success" (click)="approveCustomer(customer.email)" >Accept</button>
+                    <button type="button" class="btn btn-danger" (click)="declineRequest(customer.email)">Decline</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
